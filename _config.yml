@@ -9,14 +9,14 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "David's Site"
+title                    : "Ziwei Liu"
 title_separator          : "-"
-name                     : &name "David"
-description              : &description "David's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://skdkdavid.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+name                     : &name "Ziwei Liu"
+description              : &description "Personal site of Ziwei Liu - data science undergraduate at HKUST, working on machine learning research and mechanistic interpretability."   # Update this with a general description of your site, this is the default if not overridden by a page
+url                      : https://waxmell114514.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "Waxmell114514/skdkdavid.github.io"
+baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
+repository               : "Waxmell114514/blog"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -24,24 +24,24 @@ repository               : "Waxmell114514/skdkdavid.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "David Liu"
+  name             : "Ziwei Liu"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
+  bio              : "Data science undergraduate at HKUST. Reward models, world model distillation, and mechanistic interpretability."
+  location         : "Hong Kong"
   employer         : "HKUST"
   uri              : # URL
-  email            : "skdk2557@gmail.com" 
+  email            : "zliuhs@connect.ust.hk"
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : ""
+  googlescholar    : # URL
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : ""
+  orcid            : # URL
   semantic         : # URL
   ssrn             : # URL
-  pubmed           : ""
+  pubmed           : # URL
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
@@ -51,13 +51,13 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "Waxmell114514"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   artstation       : # Username
-  bluesky          : "" # Replace this with you Bluesky username
+  bluesky          : # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -190,6 +190,7 @@ exclude:
   - package.json*
   - Rakefile
   - README
+  - docker-compose.yaml
   - tmp
   - vendor
 keep_files:
@@ -227,7 +228,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  research:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -273,15 +274,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _research
   - scope:
       path: ""
-      type: portfolio
+      type: research
     values:
       layout: single
       author_profile: true
       share: true
-      comment: true
+      comments: true
   # _talks
   - scope:
       path: ""

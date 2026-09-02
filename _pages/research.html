@@ -1,0 +1,19 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p>
+I am an Undergraduate Research Assistant at PeiLab, HKUST. My work so far spans
+reward modelling, world model distillation, and the training infrastructure
+behind VLA and LLM-based systems; my current focus is the mechanistic
+interpretability of large models. Selected work is listed below.
+</p>
+
+{% for post in site.research reversed %}
+  {% include archive-single.html %}
+{% endfor %}

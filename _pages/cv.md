@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,56 +9,57 @@ redirect_from:
 
 {% include base_path %}
 
+[Download this CV as a PDF]({{ base_path }}/files/Ziwei_Liu_CV.pdf)
+
+Data science undergraduate · machine learning research · Hong Kong ·
+[zliuhs@connect.ust.hk](mailto:zliuhs@connect.ust.hk) ·
+[github.com/Waxmell114514](https://github.com/Waxmell114514)
+
+Profile
+======
+Year 2 Data Science and Technology undergraduate at HKUST with hands-on research
+experience in reward model training, world model distillation, and VLA/LLM
+training. Current focus on mechanistic interpretability of large models.
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **BSc in Data Science and Technology**, The Hong Kong University of Science and
+  Technology, Hong Kong — Year 2 (in progress)
+  * Cumulative GPA: 3.92 / 4.30
 
-Work experience
+Honours and awards
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* **HKUST Continuing Scholarship** — awarded for sustained academic excellence
+* **S. S. Chern Class** — member of HKUST's selective honours class
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+Research experience
+======
+* **Undergraduate Research Assistant (UGRA)**, PeiLab, HKUST — Jan 2026 – Aug 2026
+  * Trained reward models and ran model-training experiments in PyTorch.
+  * Distilled the DreamDojo world model, transferring learned capabilities into a
+    compact student model.
+  * Built and maintained end-to-end training pipelines for VLA and LLM-based models.
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* **Programming**
+  * Python
+* **Frameworks**
+  * PyTorch
+  * TransformerLens
+* **Machine learning**
+  * Reward model training
+  * World model distillation
+  * VLA and LLM training
+* **Mechanistic interpretability**
+  * Sparse autoencoders and dictionary learning
+  * Activation patching and causal tracing
+  * Logit lens and attribution analysis
+  * Circuit discovery
+  * Linear probing of internal representations
 
-Publications
+Projects
 ======
-  <ul>{% for post in site.publications reversed %}
+  <ul>{% for post in site.research reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
