@@ -231,6 +231,9 @@ collections:
   research:
     output: true
     permalink: /:collection/:path/
+  zatsudan:
+    output: true
+    permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -283,6 +286,12 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _zatsudan - the anime/culture side blog, styled separately from the academic site
+  - scope:
+      path: ""
+      type: zatsudan
+    values:
+      layout: zatsudan-post
   # _talks
   - scope:
       path: ""
