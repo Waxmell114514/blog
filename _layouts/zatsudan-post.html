@@ -1,0 +1,47 @@
+---
+layout: zatsudan
+---
+
+{% include base_path %}
+
+<article class="zt-card zt-article">
+  <header>
+    {% if page.series %}<p class="zt-sub">{{ page.series }}</p>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <p class="zt-meta">
+      {% if page.date %}<span>{{ page.date | date: "%Y 年 %-m 月 %-d 日" }}</span>{% endif %}
+      {% if page.reading %}<span>{{ page.reading }}</span>{% endif %}
+    </p>
+    {% if page.tags and page.tags != empty %}
+      <div class="zt-tags" style="justify-content:center">
+        {% for tag in page.tags %}<span class="zt-tag">{{ tag }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <hr class="zt-rule">
+
+  <div class="zt-prose">
+    {{ content }}
+  </div>
+</article>
+
+{% assign posts = site.zatsudan | sort: "date" %}
+{% for post in posts %}
+  {% if post.url == page.url %}
+    {% assign idx = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+{% assign prev_i = idx | minus: 1 %}
+{% assign next_i = idx | plus: 1 %}
+
+<nav class="zt-pager">
+  {% if idx > 0 %}
+    <a href="{{ base_path }}{{ posts[prev_i].url }}">← {{ posts[prev_i].title | truncate: 22 }}</a>
+  {% else %}
+    <a href="{{ base_path }}/zatsudan/">← 回目录</a>
+  {% endif %}
+  {% if next_i < posts.size %}
+    <a href="{{ base_path }}{{ posts[next_i].url }}">{{ posts[next_i].title | truncate: 22 }} →</a>
+  {% endif %}
+</nav>

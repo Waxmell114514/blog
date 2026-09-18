@@ -1,0 +1,40 @@
+---
+layout: zatsudan
+title: "杂谈"
+permalink: /zatsudan/
+excerpt: "关于二次元的一些长篇杂谈 —— 叙事结构、角色心理，以及它们如何对应现实。"
+---
+
+{% include base_path %}
+
+<header class="zt-card zt-hero">
+  <p class="zt-sub">What could we learn from anime?</p>
+  <h1>杂谈</h1>
+  <p>主站那边写的是探针和训练管线，这边写的是番。<br>
+     主要聊叙事结构与角色心理 —— 一部作品为什么在那个瞬间成立，以及它照见了现实的哪一部分。</p>
+  <span class="zt-kaomoji">( ´ ▽ ` )ﾉ  慢慢写，不定期更新</span>
+</header>
+
+{% assign zt_posts = site.zatsudan | sort: "date" | reverse %}
+
+{% if zt_posts.size == 0 %}
+  <div class="zt-card zt-empty"><p>还没有稿子，先鸽一会儿。</p></div>
+{% else %}
+  <div class="zt-list">
+    {% for post in zt_posts %}
+      <a class="zt-entry" href="{{ base_path }}{{ post.url }}">
+        <div class="zt-card">
+          {% if post.series %}<p class="zt-meta"><span class="zt-series">{{ post.series }}</span></p>{% endif %}
+          <h2>{{ post.title }}</h2>
+          <p class="zt-meta"><span>{{ post.date | date: "%Y 年 %-m 月 %-d 日" }}</span></p>
+          {% if post.excerpt %}<p class="zt-excerpt">{{ post.excerpt | strip_html | strip_newlines }}</p>{% endif %}
+          {% if post.tags and post.tags != empty %}
+            <div class="zt-tags">
+              {% for tag in post.tags %}<span class="zt-tag">{{ tag }}</span>{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}

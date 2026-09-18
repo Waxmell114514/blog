@@ -16,6 +16,9 @@ Ziwei Liu 的个人主页与博客，基于 [Academic Pages](https://github.com/
 | `_pages/research.html` | Research 列表页（`/research/`） |
 | `_research/*.md` | 每个研究项目一个文件，会出现在 `/research/` 和 CV 页面 |
 | `_posts/*.md` | 博客文章，文件名必须是 `YYYY-MM-DD-标题.md` |
+| `_zatsudan/*.md` | 杂谈文章（二次元那边），列在 `/zatsudan/` |
+| `_pages/zatsudan.html` | 杂谈目录页（`/zatsudan/`） |
+| `_layouts/zatsudan*.html`、`assets/css/zatsudan.css` | 杂谈区独立的版式与配色，和主站的 `main.css` 互不影响 |
 | `files/` | 可下载的附件，例如 `files/Ziwei_Liu_CV.pdf` |
 | `images/` | 图片，其中 `images/profile.png` 是侧边栏头像 |
 
@@ -36,6 +39,24 @@ excerpt: "列表页显示的一句话摘要。"
 ---
 
 正文（Markdown）。支持 MathJax 公式和 Mermaid 图。
+```
+
+### 写一篇杂谈
+
+杂谈是和主站分开的一套版式（樱花背景、独立深浅色切换），主站导航栏的「杂谈」按钮进去。
+在 `_zatsudan/` 下新建 `.md`，front matter 如下：
+
+```markdown
+---
+title: "标题"
+series: "What could we learn from anime? 其二"   # 选填，显示在标题上方
+date: 2026-10-01
+excerpt: "目录页显示的一句话摘要。"
+tags:
+  - 恋爱番
+---
+
+正文。脚注直接用 Markdown 的 `[^key]` 语法，页尾会自动生成「注释 / Notes」一节。
 ```
 
 ### 新增一个研究项目
