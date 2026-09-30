@@ -23,7 +23,8 @@ News
 * **Sep 2026** — My paper
   [*Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
   Readable Efference Copy*]({{ base_path }}/research/reaction-without-attribution/)
-  was accepted at the **NeurIPS 2026 RoboPAD Workshop**.
+  was accepted at the **NeurIPS 2026 RoboPAD Workshop**
+  ([OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
 
 Research interests
 ======

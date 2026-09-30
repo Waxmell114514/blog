@@ -8,7 +8,7 @@ date: 2026-09-12
 
 {% include base_path %}
 
-**Accepted at the NeurIPS 2026 RoboPAD Workshop.**
+**Accepted at the NeurIPS 2026 RoboPAD Workshop.** [OpenReview](https://openreview.net/forum?id=1OTHIshAFK)
 
 If you override a robot policy's actions, does anything inside it register that
 the movement wasn't its own? I ran
