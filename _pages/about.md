@@ -18,6 +18,14 @@ Since January 2026 I have been an Undergraduate Research Assistant (UGRA) at
 **PeiLab, HKUST**, where I train reward models, distil world models, and build
 end-to-end training pipelines for VLA and LLM-based systems.
 
+News
+======
+* **Sep 2026** — My paper
+  [*Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
+  Readable Efference Copy*]({{ base_path }}/research/reaction-without-attribution/)
+  was accepted at the **NeurIPS 2026 RoboPAD Workshop**
+  ([OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
+
 Research interests
 ======
 My current focus is the **mechanistic interpretability** of large models: taking

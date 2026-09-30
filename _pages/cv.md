@@ -32,6 +32,14 @@ Honours and awards
 * **HKUST Continuing Scholarship** — awarded for sustained academic excellence
 * **S. S. Chern Class** — member of HKUST's selective honours class
 
+Publications
+======
+* **Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
+  Readable Efference Copy.** *NeurIPS 2026 RoboPAD Workshop* (accepted).
+  [OpenReview](https://openreview.net/forum?id=1OTHIshAFK) ·
+  [project page]({{ base_path }}/research/reaction-without-attribution/) ·
+  [blog post]({{ base_path }}/posts/2026/09/hijacking-vla-actions/)
+
 Research experience
 ======
 * **Undergraduate Research Assistant (UGRA)**, PeiLab, HKUST — Jan 2026 – Aug 2026

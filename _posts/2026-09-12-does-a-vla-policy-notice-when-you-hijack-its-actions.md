@@ -12,6 +12,12 @@ excerpt: "I overrode a robot policy's actions and probed its hidden states for a
 
 {% include base_path %}
 
+> **Update (Sep 2026):** this work was accepted at the NeurIPS 2026 RoboPAD
+> Workshop as
+> [*Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
+> Readable Efference Copy*]({{ base_path }}/research/reaction-without-attribution/)
+> ([OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
+
 I spent about 20 hours on a small question: if you override a robot policy's
 actions, does anything inside it register that the movement wasn't its own?
 
