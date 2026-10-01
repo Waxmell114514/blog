@@ -24,7 +24,8 @@ News
   [*Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
   Readable Efference Copy*]({{ base_path }}/research/reaction-without-attribution/)
   was accepted at the **NeurIPS 2026 RoboPAD Workshop**
-  ([OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
+  ([PDF]({{ base_path }}/files/Reaction_Without_Attribution.pdf) ·
+  [OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
 
 Research interests
 ======
