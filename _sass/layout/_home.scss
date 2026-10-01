@@ -1,0 +1,202 @@
+/* ==========================================================================
+   HOMEPAGE
+   Scoped to `.home` on _pages/about.md so no other page is affected.
+   ========================================================================== */
+
+.home {
+  --home-tint: color-mix(in srgb, var(--global-base-color) 12%, transparent);
+  --home-tint-strong: color-mix(in srgb, var(--global-base-color) 28%, transparent);
+
+  h2 {
+    margin-top: 2em;
+    border-bottom: none;
+    padding-bottom: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 2.5em;
+      height: 3px;
+      margin-top: 0.35em;
+      border-radius: 3px;
+      background: var(--global-base-color);
+    }
+  }
+}
+
+/* Greeting
+   ========================================================================== */
+
+.home-hero {
+  margin-bottom: 1.5em;
+}
+
+.page__content .home-hello {
+  margin: 0;
+  font-size: $type-size-2;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--global-text-color);
+}
+
+.home-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: home-wave 2.4s ease-in-out 0.4s 2;
+}
+
+@keyframes home-wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.page__content .home-lede {
+  margin: 0.4em 0 0;
+  font-size: $type-size-4;
+  line-height: 1.45;
+}
+
+.home-mark {
+  background: linear-gradient(transparent 60%, var(--home-tint-strong) 60%);
+  padding: 0 0.1em;
+}
+
+/* Chips
+   ========================================================================== */
+
+.page__content .home-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 1.25em 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0.2em 0.75em;
+    font-size: $type-size-6;
+    border-radius: 999px;
+    background: var(--home-tint);
+    color: var(--global-text-color);
+  }
+}
+
+/* News
+   ========================================================================== */
+
+.home-news {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    gap: 0.9em;
+    align-items: baseline;
+    margin: 0 0 0.75em;
+  }
+}
+
+.home-date {
+  flex: none;
+  padding: 0.15em 0.6em;
+  font-size: $type-size-6;
+  font-weight: bold;
+  white-space: nowrap;
+  border-radius: $border-radius;
+  background: var(--global-base-color);
+  color: #fff;
+}
+
+/* Recent posts
+   ========================================================================== */
+
+.home-posts {
+  margin: 1em 0 0.5em;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1em;
+    padding: 0.6em 0.25em;
+    text-decoration: none;
+    color: var(--global-text-color);
+    transition: $global-transition;
+
+    &:hover {
+      padding-left: 0.6em;
+      background: var(--home-tint);
+      color: var(--global-base-color);
+    }
+  }
+}
+
+.home-post-title {
+  font-weight: bold;
+}
+
+.home-post-date {
+  flex: none;
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
+}
+
+.page__content .home-more {
+  font-size: 0.9em;
+}
+
+/* Off-the-clock aside
+   ========================================================================== */
+
+.home-aside {
+  margin: 2em 0 0;
+  padding: 1em 1.25em;
+  border-left: 4px solid var(--global-base-color);
+  border-radius: 0 $border-radius $border-radius 0;
+  background: var(--home-tint);
+
+  p {
+    margin: 0;
+  }
+}
+
+.page__content .home-aside-label {
+  font-size: $type-size-7;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-base-color);
+}
+
+@media (max-width: $small) {
+  .page__content .home-hello {
+    font-size: $type-size-3;
+  }
+
+  .home-posts a {
+    flex-direction: column;
+    gap: 0.15em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-wave {
+    animation: none;
+  }
+
+  .home-posts a:hover {
+    padding-left: 0.25em;
+  }
+}

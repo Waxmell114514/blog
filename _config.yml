@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Ziwei Liu"
   pronouns         : # example: "she/her"  
-  bio              : "Data science undergraduate at HKUST. Reward models, world model distillation, and mechanistic interpretability."
+  bio              : "Taking neural networks apart to see what's inside. Undergrad at HKUST, research assistant at PeiLab."
   location         : "Hong Kong"
   employer         : "HKUST"
   uri              : # URL
