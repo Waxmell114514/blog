@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "Ziwei Liu"
+hide_title: true
 excerpt: "Data science undergraduate at HKUST working on machine learning research and mechanistic interpretability."
 author_profile: true
 redirect_from:
@@ -10,50 +11,88 @@ redirect_from:
 
 {% include base_path %}
 
-I am a second-year undergraduate in **Data Science and Technology** at the
-[Hong Kong University of Science and Technology](https://hkust.edu.hk), where I am
-a member of the S. S. Chern Class and hold the HKUST Continuing Scholarship.
+<div class="home" markdown="1">
 
-Since January 2026 I have been an Undergraduate Research Assistant (UGRA) at
-**PeiLab, HKUST**, where I train reward models, distil world models, and build
-end-to-end training pipelines for VLA and LLM-based systems.
+<header class="home-hero">
+  <p class="home-hello">Hi, I'm Ziwei <span class="home-wave" aria-hidden="true">👋</span></p>
+  <p class="home-lede">I take neural networks apart to see what is <span class="home-mark">actually</span> going on inside them.</p>
+</header>
 
-News
-======
-* **Sep 2026** — My paper
-  [*Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
-  Readable Efference Copy*]({{ base_path }}/research/reaction-without-attribution/)
-  was accepted at the **NeurIPS 2026 RoboPAD Workshop**
-  ([PDF]({{ base_path }}/files/Reaction_Without_Attribution.pdf) ·
-  [OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
+Most days that means **mechanistic interpretability**: training sparse
+autoencoders, patching activations, fitting probes, and staring at hidden states
+until they either make sense or stubbornly refuse to. My latest rabbit hole was a
+simple question: [if you secretly hijack a robot policy's actions, does anything
+inside it notice?]({{ base_path }}/posts/2026/09/hijacking-vla-actions/) As far
+as linear probes can tell, no, and that negative result turned into my first
+workshop paper.
 
-Research interests
-======
-My current focus is the **mechanistic interpretability** of large models: taking
-a trained network apart to find the features and circuits that actually drive its
-behaviour, rather than treating it as a black box. Concretely, I work with
+Since January 2026 I've been an undergraduate research assistant at **PeiLab,
+HKUST**, where I train reward models, distil world models, and keep VLA and LLM
+training pipelines running. Knowing how a model gets built makes it a lot easier
+to guess what is happening inside it, so I like having a foot on both sides.
+I'm a second-year **Data Science and Technology** student at
+[HKUST](https://hkust.edu.hk) and part of the S. S. Chern Class.
 
-* sparse autoencoders and dictionary learning,
-* activation patching and causal tracing,
-* the logit lens and attribution analysis,
-* circuit discovery, and
-* linear probing of internal representations.
+<ul class="home-chips" aria-label="Things I work with">
+  <li>sparse autoencoders</li>
+  <li>activation patching</li>
+  <li>logit lens</li>
+  <li>circuit discovery</li>
+  <li>linear probes</li>
+  <li>reward models</li>
+  <li>world models</li>
+  <li>VLAs</li>
+</ul>
 
-Alongside that, I keep working on the training side of the stack — reward
-modelling, world model distillation, and VLA/LLM training pipelines — because
-knowing how a model is built makes it much easier to reason about what is
-happening inside it. You can read more on the [research]({{ base_path }}/research/)
-page.
+## News
 
-This site
-======
-This is where I keep notes on what I am reading and building. Posts land on the
-[blog]({{ base_path }}/year-archive/); a full academic record is on the
-[CV]({{ base_path }}/cv/) page, which you can also
-[download as a PDF]({{ base_path }}/files/Ziwei_Liu_CV.pdf).
+<ul class="home-news">
+  <li>
+    <span class="home-date">Sep 2026</span>
+    <span>🎉 My paper
+      <a href="{{ base_path }}/research/reaction-without-attribution/"><em>Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly Readable Efference Copy</em></a>
+      was accepted at the <strong>NeurIPS 2026 RoboPAD Workshop</strong>
+      (<a href="{{ base_path }}/files/Reaction_Without_Attribution.pdf">PDF</a> ·
+      <a href="https://openreview.net/forum?id=1OTHIshAFK">OpenReview</a>).</span>
+  </li>
+</ul>
 
-Contact
-======
-The best way to reach me is by email at
-[zliuhs@connect.ust.hk](mailto:zliuhs@connect.ust.hk), or you can find my code on
-[GitHub](https://github.com/Waxmell114514).
+## Lately on the blog
+
+I write things up in public because a reader forces a precision a private note
+never does, and if a post is wrong, I'd rather find out.
+
+{% assign home_posts = site.posts | slice: 0, 3 %}
+<ul class="home-posts">
+  {% for post in home_posts %}
+  <li>
+    <a href="{{ base_path }}{{ post.url }}">
+      <span class="home-post-title">{{ post.title }}</span>
+      <span class="home-post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<p class="home-more"><a href="{{ base_path }}/research/">What I'm working on</a> · <a href="{{ base_path }}/year-archive/">All posts</a></p>
+
+{% assign zt_latest = site.zatsudan | sort: "date" | reverse | first %}
+{% if zt_latest %}
+<aside class="home-aside">
+  <p class="home-aside-label">Off the clock</p>
+  <p>When I'm not probing models, I write long essays about anime over in
+    <a href="{{ base_path }}/zatsudan/">杂谈</a>: why a story works at the
+    exact moment it does. Latest:
+    <a href="{{ base_path }}{{ zt_latest.url }}">{{ zt_latest.title }}</a></p>
+</aside>
+{% endif %}
+
+## Say hi
+
+If any of this overlaps with what you're working on, or you think one of my
+posts gets something wrong, I'd genuinely like to hear about it. Email me at
+[zliuhs@connect.ust.hk](mailto:zliuhs@connect.ust.hk); my code lives on
+[GitHub](https://github.com/Waxmell114514). The formal version of all this is on
+the [CV]({{ base_path }}/cv/) page
+([PDF]({{ base_path }}/files/Ziwei_Liu_CV.pdf)).
+
+</div>
