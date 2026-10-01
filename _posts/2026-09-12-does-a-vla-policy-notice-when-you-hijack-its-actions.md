@@ -16,7 +16,8 @@ excerpt: "I overrode a robot policy's actions and probed its hidden states for a
 > Workshop as
 > [*Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
 > Readable Efference Copy*]({{ base_path }}/research/reaction-without-attribution/)
-> ([OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
+> ([PDF]({{ base_path }}/files/Reaction_Without_Attribution.pdf) ·
+> [OpenReview](https://openreview.net/forum?id=1OTHIshAFK)).
 
 I spent about 20 hours on a small question: if you override a robot policy's
 actions, does anything inside it register that the movement wasn't its own?
