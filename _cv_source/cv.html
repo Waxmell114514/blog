@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ziwei Liu — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+
+@page { size: A4; margin: 0; }
+:root {
+  --bg: #fefdfb; --ink: #201e1b; --muted: #6d6861; --soft: #66635d;
+  --faint: #95928b; --rule: #e6e4e2; --accent: #2f628a; --tint: #f1f6fb;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); }
+body {
+  font-family: "IBM Plex Sans", sans-serif; color: var(--ink);
+  font-size: 13.4px; line-height: 22px;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.page { width: 210mm; height: 296.5mm; overflow: hidden; padding: 60px 62px 0; position: relative; }
+a { color: inherit; text-decoration: none; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+
+header { display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 1px solid var(--ink); padding-bottom: 20px; margin-bottom: 29px; }
+h1 { font-size: 40px; line-height: 40px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 11px; }
+.tagline { font-family: "IBM Plex Mono"; font-size: 10.4px; line-height: 14px; letter-spacing: 1.75px;
+  color: var(--muted); text-transform: uppercase; }
+.tagline span { margin: 0 14px; }
+.contact { font-family: "IBM Plex Mono"; font-size: 10.4px; line-height: 18px; color: #75716a; text-align: right; position: relative; top: -2px; }
+.contact div + div { margin-top: 4px; }
+
+section { display: grid; grid-template-columns: 138px 1fr; margin-bottom: 27px; }
+.label { font-family: "IBM Plex Mono"; font-weight: 500; font-size: 9.56px; letter-spacing: 2px;
+  color: var(--accent); text-transform: uppercase; padding-top: 1px; line-height: 20px; }
+.row { display: flex; justify-content: space-between; align-items: baseline; }
+.title { font-weight: 600; font-size: 14.3px; line-height: 22px; }
+.meta { font-family: "IBM Plex Mono"; font-size: 10.4px; color: #75716a; white-space: nowrap; letter-spacing: 0.67px; }
+.sub { color: #46423d; margin-top: 2px; }
+.gpa { margin-top: 11px; background: var(--tint); border-left: 2px solid var(--accent);
+  padding: 9.5px 14px; display: flex; align-items: baseline; gap: 16px; }
+.gpa .k { font-family: "IBM Plex Mono"; font-size: 9.4px; letter-spacing: 1.57px; color: var(--muted); }
+.gpa .v { font-size: 14.6px; font-weight: 600; }
+.gpa .v span { font-weight: 400; color: var(--muted); }
+
+ul { list-style: none; }
+li { position: relative; padding-left: 18px; }
+li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: #b3b1ad; }
+ul.blue li::before { background: var(--accent); }
+ul.blue li + li { margin-top: 8px; }
+ul.blue .d { color: var(--soft); }
+.bul { margin-top: 11px; }
+.bul li + li { margin-top: 6.5px; }
+
+.pub-venue { color: #46423d; margin-top: 3px; }
+.pub-venue em { font-style: italic; }
+.pub-links { font-family: "IBM Plex Mono"; font-size: 10.4px; color: #75716a; letter-spacing: 0.67px; white-space: nowrap; }
+.pub-links a { color: var(--accent); }
+.pub-links span { margin: 0 8px; color: #b3b1ad; }
+
+table { border-collapse: collapse; width: 100%; }
+td { vertical-align: top; padding: 8px 0 11px; border-bottom: 1px solid var(--rule); }
+tr:first-child td { padding-top: 0; }
+tr:last-child td { border-bottom: none; }
+td.k { width: 168px; font-family: "IBM Plex Mono"; font-size: 9.95px; letter-spacing: 1.33px; color: var(--muted);
+  text-transform: uppercase; line-height: 16px; padding-top: 13px; }
+tr:first-child td.k { padding-top: 5px; }
+td.k.acc { color: var(--accent); }
+
+footer { position: absolute; left: 62px; right: 62px; bottom: 45px; border-top: 1px solid var(--rule);
+  padding-top: 16px; display: flex; justify-content: space-between;
+  font-family: "IBM Plex Mono"; font-size: 9.56px; letter-spacing: 1.2px; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Ziwei Liu</h1>
+      <div class="tagline">Data Science Undergraduate<span>·</span>Machine Learning Research</div>
+    </div>
+    <div class="contact">
+      <div><a href="mailto:zliuhs@connect.ust.hk">zliuhs@connect.ust.hk</a></div>
+      <div><a href="https://github.com/Waxmell114514">github.com/Waxmell114514</a></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="label">Profile</div>
+    <div>Year 2 Data Science and Technology undergraduate at HKUST with hands-on<br>
+      research experience in reward model training, world model distillation, and<br>
+      VLA/LLM training. Current focus on mechanistic interpretability of large models.</div>
+  </section>
+
+  <section>
+    <div class="label">Education</div>
+    <div>
+      <div class="row"><div class="title">The Hong Kong University of Science and Technology</div><div class="meta">Year 2 · Hong Kong</div></div>
+      <div class="sub">BSc in Data Science and Technology</div>
+      <div class="gpa"><span class="k">CUMULATIVE GPA</span><span class="v">3.92 <span>/ 4.30</span></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Honours</div>
+    <ul class="blue">
+      <li><b style="font-weight:600">HKUST Continuing Scholarship</b> <span class="d">— awarded for sustained academic excellence</span></li>
+      <li><b style="font-weight:600">S. S. Chern Class</b> <span class="d">— member of HKUST's selective honours class</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="label">Publications</div>
+    <div>
+      <div class="row"><div class="title">Reaction Without Attribution: Hijacking a VLA's Actions<br>Reveals No Linearly Readable Efference Copy</div><div class="meta">2026</div></div>
+      <div class="row pub-venue"><div>Ziwei Liu · <em>NeurIPS 2026 RoboPAD Workshop</em> (accepted)</div><div class="pub-links"><a href="https://openreview.net/forum?id=1OTHIshAFK">OpenReview</a><span>·</span><a href="https://waxmell114514.github.io/blog/files/Reaction_Without_Attribution.pdf">PDF</a></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Research</div>
+    <div>
+      <div class="row"><div class="title">Undergraduate Research Assistant (UGRA)</div><div class="meta">Jan 2026 – Aug 2026</div></div>
+      <div class="sub">PeiLab, HKUST</div>
+      <ul class="bul">
+        <li>Trained reward models and ran model-training experiments in PyTorch.</li>
+        <li>Distilled the DreamDojo world model, transferring learned capabilities into a compact student model.</li>
+        <li>Built and maintained end-to-end training pipelines for VLA and LLM-based models.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Skills</div>
+    <table>
+      <tr><td class="k">Programming</td><td>Python</td></tr>
+      <tr><td class="k">Frameworks</td><td>PyTorch · TransformerLens</td></tr>
+      <tr><td class="k">Machine learning</td><td>Reward model training · World model distillation · VLA and LLM training</td></tr>
+      <tr><td class="k acc">Mech<br>interpretability</td><td>Sparse autoencoders and dictionary learning ·<br>Activation patching and causal tracing · Logit lens and attribution analysis · Circuit discovery · Linear probing of internal representations</td></tr>
+    </table>
+  </section>
+
+  <footer><span>ZIWEI LIU</span><span>CURRICULUM VITAE</span></footer>
+</div>
+</body>
+</html>
