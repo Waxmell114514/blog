@@ -75,17 +75,6 @@ never does, and if a post is wrong, I'd rather find out.
 </ul>
 <p class="home-more"><a href="{{ base_path }}/research/">What I'm working on</a> · <a href="{{ base_path }}/year-archive/">All posts</a></p>
 
-{% assign zt_latest = site.zatsudan | sort: "date" | reverse | first %}
-{% if zt_latest %}
-<aside class="home-aside">
-  <p class="home-aside-label">Off the clock</p>
-  <p>When I'm not probing models, I write long essays about anime over in
-    <a href="{{ base_path }}/zatsudan/">杂谈</a>: why a story works at the
-    exact moment it does. Latest:
-    <a href="{{ base_path }}{{ zt_latest.url }}">{{ zt_latest.title }}</a></p>
-</aside>
-{% endif %}
-
 ## Say hi
 
 If any of this overlaps with what you're working on, or you think one of my
