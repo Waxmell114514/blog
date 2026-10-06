@@ -157,29 +157,6 @@
   font-size: 0.9em;
 }
 
-/* Off-the-clock aside
-   ========================================================================== */
-
-.home-aside {
-  margin: 2em 0 0;
-  padding: 1em 1.25em;
-  border-left: 4px solid var(--global-base-color);
-  border-radius: 0 $border-radius $border-radius 0;
-  background: var(--home-tint);
-
-  p {
-    margin: 0;
-  }
-}
-
-.page__content .home-aside-label {
-  font-size: $type-size-7;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--global-base-color);
-}
-
 @media (max-width: $small) {
   .page__content .home-hello {
     font-size: $type-size-3;
