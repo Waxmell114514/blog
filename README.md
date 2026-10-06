@@ -70,6 +70,18 @@ CV 页面的正文直接写在 `_pages/cv.md` 里。换 PDF 时把新文件放�
 `files/Ziwei_Liu_CV.pdf`（保持文件名不变，否则要同步改 `_pages/cv.md` 和
 `_pages/about.md` 里的链接）。
 
+PDF 的源文件是 `_cv_source/cv.html`（下划线开头的目录不会被 Jekyll 发布）。改完内容后
+用 Chrome / Chromium 重新导出，覆盖 `files/Ziwei_Liu_CV.pdf`：
+
+```bash
+chromium --headless --no-pdf-header-footer --virtual-time-budget=8000 \
+  --print-to-pdf=files/Ziwei_Liu_CV.pdf _cv_source/cv.html
+```
+
+也可以在浏览器里打开 `cv.html`，打印 → 另存为 PDF（纸张 A4、边距“无”、勾选“背景图形”）。
+PDF 打开时浏览器标签页显示的标题来自 `cv.html` 的 `<title>`。
+`_pages/cv.md` 网页版和 PDF 是两份内容，更新时两边都要改。
+
 ### 换头像
 
 替换 `images/profile.png`（目前还是模板自带的占位图）。
