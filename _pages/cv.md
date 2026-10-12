@@ -34,6 +34,11 @@ Honours and awards
 
 Publications
 ======
+* **How Much Opaque Serial Depth Does a Loop Buy? A Preregistered Study of No-CoT
+  Reasoning in Small Looped Transformers.** *Preprint*, October 2026.
+  [PDF]({{ base_path }}/files/Opaque_Serial_Depth_Loop.pdf) ·
+  [project page]({{ base_path }}/research/opaque-serial-depth-loop/)
+
 * **Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly
   Readable Efference Copy.** *NeurIPS 2026 RoboPAD Workshop* (accepted).
   [PDF]({{ base_path }}/files/Reaction_Without_Attribution.pdf) ·
