@@ -48,6 +48,12 @@ I'm a second-year **Data Science and Technology** student at
 
 <ul class="home-news">
   <li>
+    <span class="home-date">Oct 2026</span>
+    <span>📄 New preprint:
+      <a href="{{ base_path }}/research/opaque-serial-depth-loop/"><em>How Much Opaque Serial Depth Does a Loop Buy? A Preregistered Study of No-CoT Reasoning in Small Looped Transformers</em></a>
+      (<a href="{{ base_path }}/files/Opaque_Serial_Depth_Loop.pdf">PDF</a>).</span>
+  </li>
+  <li>
     <span class="home-date">Sep 2026</span>
     <span>🎉 My paper
       <a href="{{ base_path }}/research/reaction-without-attribution/"><em>Reaction Without Attribution: Hijacking a VLA's Actions Reveals No Linearly Readable Efference Copy</em></a>
