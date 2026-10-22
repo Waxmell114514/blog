@@ -48,7 +48,7 @@ Publications
 
 Research experience
 ======
-* **Undergraduate Research Assistant (UGRA)**, PeiLab, HKUST — Jan 2026 – Aug 2026
+* **Undergraduate Research Assistant (UGRA)**, HKUST — Jan 2026 – Aug 2026
   * Trained reward models and ran model-training experiments in PyTorch.
   * Distilled the DreamDojo world model, transferring learned capabilities into a
     compact student model.

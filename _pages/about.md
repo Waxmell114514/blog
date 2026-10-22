@@ -26,8 +26,8 @@ inside it notice?]({{ base_path }}/posts/2026/09/hijacking-vla-actions/) As far
 as linear probes can tell, no, and that negative result turned into my first
 workshop paper.
 
-From January to August 2026 I was an undergraduate research assistant at
-**PeiLab, HKUST**, where I trained reward models, distilled world models, and kept
+From January to August 2026 I worked as an undergraduate research assistant,
+training reward models, distilling world models, and keeping
 VLA and LLM training pipelines running. Knowing how a model gets built makes it a lot easier
 to guess what is happening inside it, so I like having a foot on both sides.
 I'm a second-year **Data Science and Technology** student at
