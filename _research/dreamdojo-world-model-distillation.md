@@ -2,7 +2,7 @@
 title: "DreamDojo world model distillation"
 excerpt: "Distilling the DreamDojo world model into a compact student model that retains the teacher's learned capabilities."
 collection: research
-period: "PeiLab, HKUST · 2026"
+period: "HKUST · 2026"
 date: 2026-02-01
 ---
 

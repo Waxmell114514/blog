@@ -1,8 +1,8 @@
 ---
 title: "Training pipelines for VLA and LLM-based models"
-excerpt: "End-to-end pipelines for training vision-language-action and LLM-based models, built and maintained as shared lab infrastructure."
+excerpt: "End-to-end pipelines for training vision-language-action and LLM-based models, built and maintained as shared research infrastructure."
 collection: research
-period: "PeiLab, HKUST · 2026"
+period: "HKUST · 2026"
 date: 2026-01-01
 ---
 
