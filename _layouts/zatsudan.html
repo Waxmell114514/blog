@@ -1,0 +1,90 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+{% assign zt_title = page.title | default: "杂谈" %}
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ zt_title }} - 杂谈 · {{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: '关于二次元的杂谈。' | strip_html | strip_newlines | truncate: 160 }}">
+    <meta property="og:title" content="{{ zt_title }} - 杂谈">
+    <meta property="og:type" content="{% if page.collection == 'zatsudan' %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ page.url | prepend: base_path }}">
+    <link rel="canonical" href="{{ page.url | prepend: base_path }}">
+
+    <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg">
+    <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png">
+
+    <script>
+      // Applied before paint so the page never flashes the wrong theme.
+      try {
+        var t = localStorage.getItem("zt-theme");
+        if (t) { document.documentElement.setAttribute("data-zt-theme", t); }
+      } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=ZCOOL+KuaiLe&display=swap">
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/zatsudan.css">
+  </head>
+
+  <body class="zt-body">
+    <div class="zt-sky" aria-hidden="true">
+      <span class="zt-petal" style="--x:4%;  --w:13px; --dur:15s; --delay:-2s"></span>
+      <span class="zt-petal" style="--x:13%; --w:9px;  --dur:20s; --delay:-11s"></span>
+      <span class="zt-petal" style="--x:22%; --w:16px; --dur:17s; --delay:-4s"></span>
+      <span class="zt-petal" style="--x:31%; --w:10px; --dur:23s; --delay:-17s"></span>
+      <span class="zt-petal" style="--x:41%; --w:12px; --dur:18s; --delay:-9s"></span>
+      <span class="zt-petal" style="--x:50%; --w:8px;  --dur:26s; --delay:-20s"></span>
+      <span class="zt-petal" style="--x:59%; --w:14px; --dur:16s; --delay:-6s"></span>
+      <span class="zt-petal" style="--x:68%; --w:10px; --dur:21s; --delay:-14s"></span>
+      <span class="zt-petal" style="--x:77%; --w:15px; --dur:19s; --delay:-1s"></span>
+      <span class="zt-petal" style="--x:86%; --w:9px;  --dur:24s; --delay:-19s"></span>
+      <span class="zt-petal" style="--x:93%; --w:12px; --dur:17s; --delay:-8s"></span>
+      <span class="zt-petal" style="--x:35%; --w:7px;  --dur:28s; --delay:-23s"></span>
+    </div>
+
+    <nav class="zt-nav">
+      <a class="zt-brand" href="{{ base_path }}/zatsudan/">杂谈</a>
+      <span class="zt-nav-spacer"></span>
+      <a class="zt-link" href="{{ base_path }}/zatsudan/">目录</a>
+      <a class="zt-link" href="{{ base_path }}/">← 回主站</a>
+      <button class="zt-toggle" type="button" id="zt-theme-toggle" aria-label="切换夜间模式">☾︎</button>
+    </nav>
+
+    <div class="zt-wrap">
+      {{ content }}
+    </div>
+
+    <footer class="zt-foot">
+      <p>© {{ site.time | date: '%Y' }} {{ site.author.name }} · 这里只写二次元，学术的部分在 <a href="{{ base_path }}/">主站</a>。</p>
+    </footer>
+
+    <script>
+      (function () {
+        var btn = document.getElementById("zt-theme-toggle");
+        if (!btn) { return; }
+        var root = document.documentElement;
+        function current() {
+          var set = root.getAttribute("data-zt-theme");
+          if (set) { return set; }
+          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        function paint() { btn.textContent = current() === "dark" ? "☀︎" : "☾︎"; }
+        btn.addEventListener("click", function () {
+          var next = current() === "dark" ? "light" : "dark";
+          root.setAttribute("data-zt-theme", next);
+          try { localStorage.setItem("zt-theme", next); } catch (e) {}
+          paint();
+        });
+        paint();
+      })();
+    </script>
+  </body>
+</html>

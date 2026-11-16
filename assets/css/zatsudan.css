@@ -1,0 +1,476 @@
+/* ==========================================================================
+   杂谈 / Zatsudan — styles for the anime-side blog.
+   Deliberately separate from the academic site's main.css: this sub-site
+   loads only this file, so nothing here can leak into the CV pages.
+   ========================================================================== */
+
+:root {
+  --zt-bg-1: #fff2f7;
+  --zt-bg-2: #f4efff;
+  --zt-bg-3: #e9f3ff;
+  --zt-card: rgba(255, 255, 255, 0.82);
+  --zt-card-solid: #fffafc;
+  --zt-ink: #3b3244;
+  --zt-ink-soft: #6f6579;
+  --zt-ink-faint: #9b90a6;
+  --zt-pink: #ff7fa7;
+  --zt-pink-deep: #d95680;
+  --zt-lav: #a68bff;
+  --zt-sky: #6fb7ff;
+  --zt-line: rgba(255, 127, 167, 0.22);
+  --zt-shadow: 0 10px 34px rgba(174, 129, 168, 0.16);
+  --zt-shadow-lift: 0 16px 44px rgba(174, 129, 168, 0.26);
+  --zt-marker: rgba(255, 183, 204, 0.55);
+  --zt-radius: 22px;
+
+  --zt-font-display: "ZCOOL KuaiLe", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  --zt-font-latin: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --zt-font-body: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    "Source Han Sans SC", sans-serif;
+}
+
+html[data-zt-theme="dark"] {
+  --zt-bg-1: #1b1526;
+  --zt-bg-2: #191a2e;
+  --zt-bg-3: #141b2c;
+  --zt-card: rgba(40, 34, 57, 0.78);
+  --zt-card-solid: #262036;
+  --zt-ink: #efe7f6;
+  --zt-ink-soft: #b9acc8;
+  --zt-ink-faint: #8b7f9b;
+  --zt-pink: #ff9dbd;
+  --zt-pink-deep: #ffb3cc;
+  --zt-lav: #bba6ff;
+  --zt-sky: #8ac6ff;
+  --zt-line: rgba(255, 157, 189, 0.24);
+  --zt-shadow: 0 10px 34px rgba(0, 0, 0, 0.36);
+  --zt-shadow-lift: 0 16px 44px rgba(0, 0, 0, 0.46);
+  --zt-marker: rgba(255, 130, 170, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-zt-theme="light"]) {
+    --zt-bg-1: #1b1526;
+    --zt-bg-2: #191a2e;
+    --zt-bg-3: #141b2c;
+    --zt-card: rgba(40, 34, 57, 0.78);
+    --zt-card-solid: #262036;
+    --zt-ink: #efe7f6;
+    --zt-ink-soft: #b9acc8;
+    --zt-ink-faint: #8b7f9b;
+    --zt-pink: #ff9dbd;
+    --zt-pink-deep: #ffb3cc;
+    --zt-lav: #bba6ff;
+    --zt-sky: #8ac6ff;
+    --zt-line: rgba(255, 157, 189, 0.24);
+    --zt-shadow: 0 10px 34px rgba(0, 0, 0, 0.36);
+    --zt-shadow-lift: 0 16px 44px rgba(0, 0, 0, 0.46);
+    --zt-marker: rgba(255, 130, 170, 0.28);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body.zt-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--zt-font-body);
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--zt-ink);
+  background:
+    radial-gradient(1100px 620px at 12% -8%, rgba(255, 178, 205, 0.45), transparent 62%),
+    radial-gradient(900px 560px at 88% 4%, rgba(168, 154, 255, 0.36), transparent 60%),
+    linear-gradient(180deg, var(--zt-bg-1) 0%, var(--zt-bg-2) 46%, var(--zt-bg-3) 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* --- falling sakura ------------------------------------------------------ */
+
+.zt-sky {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.zt-petal {
+  position: absolute;
+  top: -8vh;
+  left: var(--x);
+  width: var(--w);
+  height: calc(var(--w) * 0.8);
+  background: linear-gradient(135deg, #ffd3e1, #ff9dbd);
+  border-radius: 100% 0 100% 0;
+  opacity: 0.55;
+  animation: zt-fall var(--dur) linear var(--delay) infinite;
+}
+
+html[data-zt-theme="dark"] .zt-petal,
+:root:not([data-zt-theme="light"]) .zt-petal { opacity: 0.32; }
+
+@keyframes zt-fall {
+  0%   { transform: translate3d(0, -10vh, 0) rotate(0deg); }
+  50%  { transform: translate3d(6vw, 50vh, 0) rotate(220deg); }
+  100% { transform: translate3d(-3vw, 112vh, 0) rotate(460deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zt-sky { display: none; }
+  * { animation: none !important; transition: none !important; }
+}
+
+/* --- shell --------------------------------------------------------------- */
+
+.zt-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 18px 64px;
+}
+
+.zt-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 20px 18px 8px;
+}
+
+.zt-brand {
+  font-family: var(--zt-font-display);
+  font-size: 1.5rem;
+  color: var(--zt-pink-deep);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.zt-brand:hover { color: var(--zt-lav); }
+
+.zt-nav-spacer { flex: 1 1 auto; }
+
+.zt-nav a.zt-link,
+.zt-toggle {
+  font-family: var(--zt-font-latin);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--zt-ink-soft);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--zt-line);
+  background: var(--zt-card);
+  transition: transform 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.zt-nav a.zt-link:hover,
+.zt-toggle:hover {
+  color: var(--zt-pink-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--zt-shadow);
+}
+
+/* --- cards --------------------------------------------------------------- */
+
+.zt-card {
+  background: var(--zt-card);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--zt-line);
+  border-radius: var(--zt-radius);
+  box-shadow: var(--zt-shadow);
+  padding: 30px 34px;
+  margin: 22px 0;
+}
+
+.zt-hero {
+  text-align: center;
+  padding: 40px 34px 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 178, 205, 0.34), rgba(168, 154, 255, 0.28)),
+    var(--zt-card);
+}
+
+.zt-hero h1 {
+  font-family: var(--zt-font-display);
+  font-size: clamp(1.9rem, 6vw, 2.7rem);
+  color: var(--zt-pink-deep);
+  margin: 0 0 6px;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+}
+
+.zt-hero .zt-sub {
+  font-family: var(--zt-font-latin);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--zt-lav);
+  margin: 0 0 14px;
+}
+
+.zt-hero p { margin: 0 auto; max-width: 34rem; color: var(--zt-ink-soft); font-size: 0.97rem; }
+
+.zt-kaomoji {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--zt-font-latin);
+  color: var(--zt-pink);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+}
+
+/* --- post list ----------------------------------------------------------- */
+
+.zt-list { list-style: none; margin: 0; padding: 0; }
+
+.zt-entry {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.zt-entry:hover { transform: translateY(-4px); }
+.zt-entry:hover .zt-card { box-shadow: var(--zt-shadow-lift); border-color: var(--zt-pink); }
+
+.zt-entry h2 {
+  font-size: 1.28rem;
+  line-height: 1.55;
+  margin: 0 0 8px;
+  color: var(--zt-ink);
+  font-weight: 700;
+}
+.zt-entry:hover h2 { color: var(--zt-pink-deep); }
+
+.zt-meta {
+  font-family: var(--zt-font-latin);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--zt-ink-faint);
+  margin: 0 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+}
+
+.zt-series { color: var(--zt-lav); }
+
+.zt-excerpt { margin: 0; color: var(--zt-ink-soft); font-size: 0.96rem; line-height: 1.8; }
+
+.zt-tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.zt-tag {
+  font-family: var(--zt-font-latin);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 3px 11px;
+  border-radius: 999px;
+  color: var(--zt-pink-deep);
+  background: rgba(255, 183, 204, 0.3);
+  border: 1px solid var(--zt-line);
+}
+
+.zt-empty { text-align: center; color: var(--zt-ink-faint); }
+
+/* --- article ------------------------------------------------------------- */
+
+.zt-article { padding: 36px 38px 40px; }
+
+.zt-article > header { text-align: center; margin-bottom: 8px; }
+
+.zt-article h1 {
+  font-size: clamp(1.5rem, 4.6vw, 2.05rem);
+  line-height: 1.5;
+  margin: 0 0 10px;
+  color: var(--zt-ink);
+  font-weight: 700;
+}
+
+.zt-article > header .zt-sub {
+  font-family: var(--zt-font-latin);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--zt-lav);
+  margin: 0 0 10px;
+}
+
+.zt-article > header .zt-meta { justify-content: center; }
+
+.zt-rule, .zt-prose hr {
+  border: 0;
+  height: 1px;
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(90deg, transparent, var(--zt-line) 22%, var(--zt-line) 78%, transparent);
+}
+.zt-rule::after, .zt-prose hr::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 10px;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  background: linear-gradient(135deg, #ffc9da, var(--zt-pink));
+  border-radius: 100% 0 100% 0;
+}
+.zt-rule { margin: 22px 0 30px; }
+
+.zt-prose { text-align: justify; text-justify: inter-ideograph; }
+
+.zt-prose h2 {
+  font-size: 1.24rem;
+  font-weight: 700;
+  color: var(--zt-ink);
+  margin: 2.4em 0 0.9em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid var(--zt-line);
+  text-align: left;
+}
+.zt-prose h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.48em;
+  margin-right: 0.55em;
+  vertical-align: 0.06em;
+  background: linear-gradient(135deg, #ffc9da, var(--zt-pink));
+  border-radius: 100% 0 100% 0;
+}
+
+.zt-prose h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--zt-pink-deep);
+  margin: 2em 0 0.7em;
+  text-align: left;
+}
+
+.zt-prose p { margin: 1.15em 0; }
+
+.zt-prose strong {
+  font-weight: 700;
+  background: linear-gradient(transparent 62%, var(--zt-marker) 62%);
+  padding: 0 2px;
+}
+
+.zt-prose em { color: var(--zt-ink-soft); }
+
+.zt-prose a {
+  color: var(--zt-pink-deep);
+  text-decoration: none;
+  border-bottom: 1px solid var(--zt-line);
+}
+.zt-prose a:hover { color: var(--zt-lav); border-bottom-color: var(--zt-lav); }
+
+.zt-prose blockquote {
+  margin: 1.6em 0;
+  padding: 0.6em 1.2em;
+  border-left: 4px solid var(--zt-pink);
+  background: rgba(255, 183, 204, 0.16);
+  border-radius: 0 14px 14px 0;
+  color: var(--zt-ink-soft);
+}
+.zt-prose blockquote p:first-child { margin-top: 0; }
+.zt-prose blockquote p:last-child { margin-bottom: 0; }
+
+.zt-prose ul, .zt-prose ol { padding-left: 1.4em; }
+.zt-prose li { margin: 0.5em 0; }
+.zt-prose ul li::marker { color: var(--zt-pink); }
+
+.zt-prose hr { margin: 2.8em 0; }
+
+.zt-prose img { max-width: 100%; height: auto; border-radius: 14px; }
+
+.zt-prose code {
+  font-size: 0.9em;
+  background: rgba(255, 183, 204, 0.22);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+/* kramdown footnotes */
+.zt-prose .footnotes {
+  margin-top: 3em;
+  padding-top: 1.2em;
+  border-top: 2px dashed var(--zt-line);
+  font-size: 0.86rem;
+  line-height: 1.8;
+  color: var(--zt-ink-soft);
+  text-align: left;
+}
+.zt-prose .footnotes::before {
+  content: "注释 / Notes";
+  display: block;
+  font-family: var(--zt-font-latin);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--zt-pink-deep);
+  margin-bottom: 0.6em;
+}
+.zt-prose .footnotes ol { padding-left: 1.3em; }
+.zt-prose .footnotes li { margin: 0.7em 0; }
+.zt-prose .footnotes li::marker { color: var(--zt-pink); }
+.zt-prose sup a, .zt-prose .reversefootnote { border-bottom: 0; }
+.zt-prose sup a { padding: 0 2px; font-weight: 700; }
+
+/* --- article foot / pagination ------------------------------------------- */
+
+.zt-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+
+.zt-pager a, .zt-back {
+  font-family: var(--zt-font-latin);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--zt-ink-soft);
+  background: var(--zt-card);
+  border: 1px solid var(--zt-line);
+  border-radius: 999px;
+  padding: 8px 18px;
+  transition: transform 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+.zt-pager a:hover, .zt-back:hover {
+  color: var(--zt-pink-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--zt-shadow);
+}
+
+.zt-foot {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 10px 18px 46px;
+  font-family: var(--zt-font-latin);
+  font-size: 0.8rem;
+  color: var(--zt-ink-faint);
+}
+.zt-foot a { color: var(--zt-ink-soft); text-decoration: none; }
+.zt-foot a:hover { color: var(--zt-pink-deep); }
+
+@media (max-width: 640px) {
+  body.zt-body { font-size: 16px; }
+  .zt-card { padding: 24px 20px; border-radius: 18px; }
+  .zt-article { padding: 26px 20px 30px; }
+  .zt-hero { padding: 32px 20px 26px; }
+  .zt-prose { text-align: left; }
+}
